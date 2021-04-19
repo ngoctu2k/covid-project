@@ -1,9 +1,32 @@
 .item-country {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.item-country.active {
+  margin-bottom: 0px;
+}
+.item-country-left {
+  display: flex;
+  width: 20%;
+}
+.number-index {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  background: #fff;
+  text-align: center;
+  margin-right: 2px;
 }
 .national-flag {
+  display: inline-block;
   width: 45px;
   height: 30px;
   object-fit: cover;
+}
+
+.item-country-right {
+  width: 20%;
 }

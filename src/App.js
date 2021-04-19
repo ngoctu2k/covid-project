@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import covidApi from "./api/covidApi";
 import "./assets/styles/reset.css";
 import ListCountry from "./components/ListCountry";
 import Search from "./components/Search";
 import Statistics from "./components/Statistics";
 import { getAllAsyncThunk } from "./redux/covidSlice";
-function formatNumber(number) {
-  return String(number).replace(/(.)(?=(\d{3})+$)/g, "$1,");
-}
+import "./App.css";
+import React from "react";
+
 function App() {
   const state = useSelector((state) => state.covid);
   const [totalCases, setTotalCases] = useState(0);
@@ -33,26 +32,38 @@ function App() {
     gettotalCases();
   }, [loading]);
   const dispatch = useDispatch();
+  // useEffect(() => {
+  //   const action = getAllAsyncThunk();
+  //   console.log("2k");
+  // }, []);
   useEffect(() => {
+    console.log("3k");
     const action = getAllAsyncThunk();
     dispatch(action);
-    // setInterval(function(){
-    //   dispatch(action)
-    // }, 60000*3);
+
+    const Update = setInterval(function () {
+      dispatch(action);
+    }, 6000);
+    return () => {
+      console.log("update");
+      clearInterval(Update);
+    };
   }, []);
   return (
     <div className="App">
-      <div className="container">
-        <Statistics
-          totalCases={formatNumber(totalCases)}
-          totalDeaths={formatNumber(totalDeaths)}
-          totalRecovered={formatNumber(totalRecovered)}
-        />
-        <Search />
-        <ListCountry listCountry={listCountry} />
+      <div className="wrapper">
+        <div className="container">
+          <Statistics
+            totalCases={totalCases}
+            totalDeaths={totalDeaths}
+            totalRecovered={totalRecovered}
+          />
+          <Search />
+          <ListCountry listCountry={listCountry} />
+        </div>
       </div>
     </div>
   );
 }
 
-export default App;
+export default React.memo(App);

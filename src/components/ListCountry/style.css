@@ -1,0 +1,11 @@
+.list-country-container{
+    height: calc( 100vh - 300px);
+    overflow: auto;
+    padding-bottom: 20px;
+}
+ul.list-country{
+    padding: 0 30px;
+    height: 100%;
+    /* background: #fff; */
+    overflow: auto;
+}

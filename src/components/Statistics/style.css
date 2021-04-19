@@ -1,15 +1,20 @@
-.statistics{
+.statistics {
+}
+.statistics-total {
+  color: #ec526e;
+  font-weight: 600;
+  text-align: center;
+  padding: 50px 0;
+}
+.statistics-detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px 50px 30px;
+}
 
+.statistics-detail > div {
+  text-align: center;
 }
-.statistics-total{
-    color: #ec526e;
-    font-weight: 700;
-    text-align: center;
-}
-.statistics-detail{
-        display:  flex;
-        justify-content: space-between;
-}
-.statistics-detail>div{
-    text-align: center;
+.statistics-detail h3{
+    margin-bottom: 5px;
 }
