@@ -1,0 +1,15 @@
+.statistics{
+
+}
+.statistics-total{
+    color: #ec526e;
+    font-weight: 700;
+    text-align: center;
+}
+.statistics-detail{
+        display:  flex;
+        justify-content: space-between;
+}
+.statistics-detail>div{
+    text-align: center;
+}

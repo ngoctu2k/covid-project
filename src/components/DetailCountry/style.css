@@ -1,0 +1,9 @@
+.detail-country {
+  display: flex;
+  justify-content: space-between;
+}
+.national-flag {
+  width: 45px;
+  height: 30px;
+  object-fit: cover;
+}
