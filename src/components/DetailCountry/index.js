@@ -1,24 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './style.css';
+
 DetailCountry.propTypes = {
     
 };
 
 function DetailCountry(props) {
-    const{country,index} = props
+    const{deaths,recovered}=props
     return (
-        <div className="detail-country">
+        <div>
             <div>
-                <span>{index+1}</span>
-                <img className="national-flag" src={country?.countryInfo.flag} alt=""/>
+                <h4>Tử vong :{deaths}</h4>
             </div>
             <div>
-                <h3>{country?.country}</h3>
-                <p>33 minutes ago </p>
-            </div>
-            <div>
-                <h4>{country?.cases}</h4>
+                <h4>bình phục :{recovered}</h4>
             </div>
         </div>
     );

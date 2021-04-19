@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import DetailCountry from "../DetailCountry";
+import ItemCountry from "../ItemCountry";
 
 function ListCountry(props) {
   const { listCountry } = props;
@@ -11,22 +12,23 @@ function ListCountry(props) {
     (x) => x?.country?.toLowerCase().indexOf(key.toLowerCase()) >= 0
   );
   listCountryFilter.sort((a, b) => b.cases - a.cases);
-  const tenCountry = listCountryFilter.slice(0, 10);
+  const tenCountry = key?listCountryFilter.slice(0, 10):listCountryFilter.slice(0, 9)
   return (
     <div>
       <ul className="list-country">
         {!key && (
-          <DetailCountry key={VietNam?.country} country={VietNam} index={0} />
+          <ItemCountry key={VietNam?.country} country={VietNam} index={0} />
         )}
         {tenCountry &&
           tenCountry.map((country, index) => {
             return (
               <li>
-                <DetailCountry
+                <ItemCountry
                   key={country?.country}
                   country={country}
                   index={!key ? index + 1 : index}
                 />
+                {key && <DetailCountry deaths={country.deaths}  recovered={country.recovered}/>} 
               </li>
             );
           })}
