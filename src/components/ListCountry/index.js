@@ -26,7 +26,7 @@ function ListCountry(props) {
         {tenCountry &&
           tenCountry.map((country, index) => {
             return (
-              <li>
+              <li  key={country?.country}>
                 <ItemCountry
                   key={country?.country}
                   country={country}

@@ -15,7 +15,7 @@ function Search(props) {
   return (
     <form className="search">
       <div className="button-src">
-        <span><i class="fas fa-search"></i></span>
+        <span><i className="fas fa-search"></i></span>
       </div>
       <input
         type="text"

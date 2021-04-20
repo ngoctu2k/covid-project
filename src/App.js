@@ -7,6 +7,7 @@ import Statistics from "./components/Statistics";
 import { getAllAsyncThunk } from "./redux/covidSlice";
 import "./App.css";
 import React from "react";
+import Time from "./components/Time";
 
 function App() {
   const state = useSelector((state) => state.covid);
@@ -43,7 +44,7 @@ function App() {
 
     const Update = setInterval(function () {
       dispatch(action);
-    }, 6000);
+    }, 60000*3);
     return () => {
       console.log("update");
       clearInterval(Update);
@@ -53,6 +54,7 @@ function App() {
     <div className="App">
       <div className="wrapper">
         <div className="container">
+          <Time/>
           <Statistics
             totalCases={totalCases}
             totalDeaths={totalDeaths}

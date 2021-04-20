@@ -12,11 +12,11 @@ function Statistics(props) {
       <div className="statistics-detail">
         <div >
           <h3><FormatNumber number={totalDeaths}/></h3>
-          <p>DEATHS</p>
+          <p>TỬ VONG</p>
         </div>
         <div>
           <h3><FormatNumber number={totalRecovered}/></h3>
-          <p>RECOVERIES</p>
+          <p>ĐÃ CHỮA KHỎI</p>
         </div>
       </div>
     </div>
