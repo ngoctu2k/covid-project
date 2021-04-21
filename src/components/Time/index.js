@@ -12,12 +12,10 @@ function formatDate(date) {
 function Time(props) {
   const [currentTime, setCurrentTime] = useState();
   const today = new Date();
-  console.log(today);
   const year = today.getFullYear();
   const mounth = today.getMonth();
   const day = today.getDay();
   const date = today.getDate()
-  console.log(date);
   useEffect(() => {
     const getCrurrentTime = setInterval(function () {
       const today = new Date();

@@ -29,7 +29,6 @@ const covidSlice = createSlice({
       state.loading = true;
     },
     [getAllAsyncThunk.fulfilled]: (state, action) => {
-      console.log("get all");
       let ListCountry = action.payload;
 
       state.listCountry = ListCountry;

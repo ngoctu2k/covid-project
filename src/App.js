@@ -8,6 +8,7 @@ import { getAllAsyncThunk } from "./redux/covidSlice";
 import "./App.css";
 import React from "react";
 import Time from "./components/Time";
+import Weather from "./components/Weather";
 
 function App() {
   const state = useSelector((state) => state.covid);
@@ -15,7 +16,6 @@ function App() {
   const [totalDeaths, setTotalDeath] = useState(0);
   const [totalRecovered, setTotalRecovered] = useState(0);
   const { listCountry, loading } = state;
-  console.log(1);
   useEffect(() => {
     function gettotalCases() {
       let totalCase = 0;
@@ -38,7 +38,6 @@ function App() {
   //   console.log("2k");
   // }, []);
   useEffect(() => {
-    console.log("3k");
     const action = getAllAsyncThunk();
     dispatch(action);
 
@@ -46,7 +45,6 @@ function App() {
       dispatch(action);
     }, 60000*3);
     return () => {
-      console.log("update");
       clearInterval(Update);
     };
   }, []);
@@ -55,6 +53,7 @@ function App() {
       <div className="wrapper">
         <div className="container">
           <Time/>
+          <Weather/>
           <Statistics
             totalCases={totalCases}
             totalDeaths={totalDeaths}
